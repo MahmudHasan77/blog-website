@@ -19,7 +19,7 @@ export const DELETE = async (
   }
     await database();
 
-    const { id } = await params;
+    const { id } =  params;
 const blog = await blogModel.findById(id)
 if(!blog){
   return NextResponse.json({success:false,message:'blog not found'})
