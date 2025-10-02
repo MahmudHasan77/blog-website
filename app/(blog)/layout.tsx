@@ -37,9 +37,13 @@ export const metadata: Metadata = {
     ],
 
     card: "summary_large_image",
-    creator:"Mahmud Hasan"
+    creator: "Mahmud Hasan",
+  },
+  other: {
+    "google-site-verification": "b9iHtfZyRhJRLxNsYVZszvjK69CsS6k-dOda9Q9aICs",
   },
 };
+
 
 export default function RootLayout({
   children,
@@ -48,6 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-200`}
       >
