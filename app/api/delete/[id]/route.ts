@@ -7,37 +7,37 @@ import connectCloudinary from "@/lib/Cloudinary";
 
 export const DELETE = async (
   request: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: Promise<{ id: string }> } 
 ) => {
   try {
-  const isAdmin = await authMiddleware(request);
-  if (!isAdmin) {
-    return NextResponse.json(
-      { success: false, message: "Unauthorized" },
-      { status: 401 }
-    );
-  }
+    const isAdmin = await authMiddleware(request);
+    if (!isAdmin) {
+      return NextResponse.json(
+        { success: false, message: "Unauthorized" },
+        { status: 401 }
+      );
+    }
+
     await database();
 
-    const { id } =  params;
-const blog = await blogModel.findById(id)
-if(!blog){
-  return NextResponse.json({success:false,message:'blog not found'})
-}
-const blogImage = blog?.image;
-const arrayImage = blogImage.split("/")
-const  publicUrl = arrayImage[arrayImage.length -1].split(".")[0]
+    const { id } = await context.params;
 
-connectCloudinary()
- await cloudinary.uploader.destroy(publicUrl)
-    const deletedBlog = await blogModel.findByIdAndDelete(id);
-
-    if (!deletedBlog) {
+    const blog = await blogModel.findById(id);
+    if (!blog) {
       return NextResponse.json(
-        { success: false, message: "Blog not found" },
+        { success: false, message: "blog not found" },
         { status: 404 }
       );
     }
+
+    const blogImage = blog.image;
+    const arrayImage = blogImage.split("/");
+    const publicUrl = arrayImage[arrayImage.length - 1].split(".")[0];
+
+    connectCloudinary();
+    await cloudinary.uploader.destroy(publicUrl);
+
+    await blogModel.findByIdAndDelete(id);
 
     return NextResponse.json(
       { success: true, message: "Blog deleted successfully" },
