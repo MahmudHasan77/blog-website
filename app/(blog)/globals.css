@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+.headLindeStyle {
+  background: linear-gradient(50deg, red, blue, tomato, green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: heading 3s infinite;
+}
+@keyframes heading {
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.LoadingTextStyle {
+  background: linear-gradient(
+    50deg,
+    red,
+    blue,
+    tomato,
+    blue,
+    red,
+    blue,
+    tomato,
+    green
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.blogStyle {
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.01);
+}
+
+.searchBarShadow {
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.096);
+}
+
+.loaderStyle {
+  animation: Loader 2s infinite;
+}
+@keyframes Loader {
+  0% {
+    color: rgb(255, 166, 0);
+  }
+  50% {
+    color: blue;
+  }
+  90% {
+    color: red;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+.sliderStyle {
+  animation: slider 2s infinite;
+  opacity: 1;
+  translate: 200px;
+}
+@keyframes slider {
+  0% {
+  }
+  10% {
+    opacity: 1;
+    translate: 0px;
+  }
+  90% {
+    translate: 0px;
+  }
+  100% {
+    translate: -200px;
+  }
+}
+
+.animateStyle {
+  background: linear-gradient(90deg, red, blue, red, blue, red, blue);
+  rotate: 0deg;
+  animation: navAnimation 3s infinite linear;
+}
+@keyframes navAnimation {
+  100% {
+    rotate: 360deg;
+  }
+}
+.animateLatestBlog {
+  background: linear-gradient(50deg, red, blue, red, blue);
+  rotate: 0deg;
+  animation: animateLatestBlog 5s infinite linear;
+}
+@keyframes animateLatestBlog {
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.quranHeading {
+  color: red;
+  background: linear-gradient(
+    90deg,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue,
+    red,
+    blue
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footerText{
+  color:tomato;
+  animation: footerText 2s infinite linear;
+}
+@keyframes footerText {
+  50%{
+    color: blue;
+  }
+}

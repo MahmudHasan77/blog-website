@@ -1,0 +1,11 @@
+.notFoundDiv{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-items: center;
+    margin: auto;
+    text-align: center;
+    color: red;
+    font-size: medium;
+    font-weight: bold;
+}
