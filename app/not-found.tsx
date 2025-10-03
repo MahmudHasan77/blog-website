@@ -1,6 +1,5 @@
 import Link from "next/link";
 import './not-found.css'
-import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 export default function NotFound() {
   return (
     <div className="notFoundDiv">
@@ -15,12 +14,7 @@ export default function NotFound() {
             className="border-b font-semibold text-sm border-orange-300 border-dashed pb-0.5"
           >
             Go to Home Page
-            <span className="absolute top-3 right-1/5">
-              <MdKeyboardDoubleArrowLeft />
-            </span>
-            <span className="absolute top-3 left-1/5">
-              <MdKeyboardDoubleArrowLeft />
-            </span>
+
           </Link>
         </div>
     </div>
